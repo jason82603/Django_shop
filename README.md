@@ -1,6 +1,7 @@
 
 購物網站cart, 使用的資料庫是MYSQL
-python manage.py runserver
+
+執行python manage.py runserver
 
 1.購物網站首頁: 主要有分沒登入跟有登入的模式, 登入的情況下頁面會有所改變 
 
