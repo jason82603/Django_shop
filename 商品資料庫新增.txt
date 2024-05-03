@@ -1,0 +1,10 @@
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('1', 'Samsung_Galaxy_Buds_Pro', '6990', 'Samsung_Galaxy_Buds_Pro.jpg', '機體重量	單耳約 6.3 公克 / 充電盒約 44.9 公克');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('2', 'JLab_Epic_Air_ANC', '3680', 'JLab_Epic_Air_ANC.jpg', '機體重量	單耳約 7公克/ 充電盒約 57公克');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('3', 'Jabra_Elite_85t', '7890', 'Jabra_Elite_85t.jpg', '機體重量	單耳約 7公克 / 充電盒約 45 公克');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('4', 'Bose_QuietComfort_Earbuds', '9500', 'Bose_QuietComfort_Earbuds.jpg', '機體重量	單耳約 8.5 公克');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('5', 'Cleer_Ally_Plus', '5980', 'Cleer_Ally_Plus.jpg', '機體重量	單耳約 7 公克 / 充電盒約 64 公克');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('6', 'Apple-Airpods_Pro', '7990', 'Apple-Airpods_Pro.jpg', '規格項目	參數及描述');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('7', 'Marley_Redemption_ANC', '5980', 'Marley_Redemption_ANC.jpg', '規格項目	參數及描述');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('8', 'Sennheiser_MOMENTUM_2', '9990', 'Sennheiser_MOMENTUM_2.jpg', '規格項目	參數及描述');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('9', 'Ausounds_AU-Stream_Hybrid', '5980', 'Ausounds_AU-Stream_Hybrid.jpg', '規格項目	參數及描述');
+INSERT INTO `django_shop`.`cartapp_productmodel` (`id`, `pname`, `pprice`, `pimages`, `pdescription`) VALUES ('10', 'Sony_WF-1000XM4', '7990', 'Sony_WF-1000XM4.jpg', '規格項目	參數及描述');

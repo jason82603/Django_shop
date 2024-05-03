@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<!--{{ block.super }}-->
+<style>
+    body {
+        background-color: rgb(238, 238, 228);
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div id="maindiv">
+    <p class="title">訂購完成</p>
+    <p class="subject">感謝您的訂購！</p>
+    <p class="desc">親愛的 <strong>{{customname1}}</strong> (先生 / 小姐)，您已經成功的完成訂購程序，我們將儘快把您選購的商品郵寄給您！
+        <br>
+        再次感謝您支持, 您的訂單編號為：<strong>{{orderid}}</strong></p>
+    <a href="/cartordercheck/?orderid={{orderid}}&customemail={{mailto}}">&lt;詳細內容請按此&gt;</a>
+</div>
+{% endblock %}

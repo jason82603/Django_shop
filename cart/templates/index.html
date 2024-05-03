@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    {% if user.is_authenticated %}
+                    <h4 class="text-white">Hello {{ user.username }}</h4>
+                    <p class="text-muted">Welcome to my website！！</p>
+                    {% else %}
+                    <h4 class="text-white">Hello </h4>
+                    <p class="text-muted">You can login first~~</p>
+                    {% endif %}
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white"></h4>
+                    <ul class="list-unstyled">
+                        {% if user.is_authenticated %}
+                        <!--                            <li><a href="/myblog/articles/create" class="text-white">Write a new article</a></li>-->
+                        <li><a href="/logout" class="text-white">Logout</a></li>
+                        {% else %}
+                        <li><a href="/login" class="text-white">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                     stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2"
+                     viewBox="0 0 24 24" focusable="false">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                <strong>Blog</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+    <div>
+        {% if not user.is_authenticated %}
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>This is a shopping website service</h1>
+                <p class="lead text-muted"> It's a shopping website's sharing cosmos, register and create something
+                    great
+                    with
+                    me </p>
+                <p>
+                    <a href="/register" class="btn btn-primary my-2">Register</a>
+                    <a href="/login" class="btn btn-secondary my-2">Already a user? Login</a>
+                </p>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+</header>
+<div id="content">
+    <!--        <img src="{% static "images/cartTitle2.png" %}" width="920" height="29" />-->
+    <div id="sidediv">
+        <div class="sidemenu">資訊中心</div>
+        <ul>
+            <li><a href="/cart/">檢視購物車</a></li>
+            <li><a href="/cartordercheck/">查詢訂單</a></li>
+            <li><a href="/index/">回到首頁</a></li>
+        </ul>
+    </div>
+    <div id="maindiv">
+        {% if cartnum == 0 %}
+        <div class="message"> 您的購物車是空的！</div>
+        {% endif %}
+        {% for product in productall %}
+        <div class="block_product pro_photo" style="width: 300px; height: 270px;">
+            <div class="pro_photo">
+                <a href="/detail/{{product.id}}"><img src="/static/images/{{product.pimages}}" alt="產品詳細資料"
+                                                      width="135" height="135" border="0"/></a>
+                <div class="pro_name"><a href="/detail/{{product.id}}">{{product.pname}}</a></div>
+                <div class="pro_price">{{product.pprice}}</div>
+                <div class="pro_btn">
+                    <a href="/addtocart/add/{{ product.id }}/"><img src="{% static 'images/icon_cart.png' %}" height="27" border="0" /></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div style="clear:both">
+        <hr>
+    </div>
+
+</div>
+
+
+<div id="footer">
+    <p id="p3">正安數位</p>
+    <p id="p4">購物網</p>
+</div>
+
+{% endblock %}

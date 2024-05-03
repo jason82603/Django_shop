@@ -1,0 +1,55 @@
+<!-- register.html -->
+
+{% extends 'base.html' %}
+
+{% block styles %}
+<!--{{ block.super }}-->
+<style>
+    body {
+        background-color: rgb(238, 238, 228);
+    }
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Register</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <form class="needs-validation" method="post" action="/register/">
+                {% csrf_token %}
+                {% for field in form %}
+
+                <div class="form-group">
+                    <label>{{ field.label }}</label>
+                    {% if field.errors %}
+                    <div class="invalid-feedback" style="color: red;">
+                        {% for error in field.errors %}
+                        {{ error }}
+                        {% endfor %}
+                        <h1>error</h1>
+                    </div>
+                    {% endif %}
+                    {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                    {% if field.name == 'password1' or field.name == 'password2' %}
+                    <input type="password" name="{{ field.name }}" class="form-control">
+                    {% else %}
+                    <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control"
+                           value="{{ field.value }}">
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

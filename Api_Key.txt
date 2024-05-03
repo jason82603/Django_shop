@@ -1,0 +1,7 @@
+App Key (應用程式頁面) app_g9dYykLqadU70v6Q4gwJ7SzyaYLSZG1xrKUSjneULRgalI47UYBlaRrFIiJw
+App ID (應用程式頁面) 149272
+Partner Key (帳號資訊頁面) partner_Jwvm9MmtorTjICdIxTHYDA4WnXc1gE5cER8lzXFQf1sAXmAHkTEMbAuL
+Merchant ID (商家管理頁面) jason82603_CTBC
+
+測試卡號
+4242 4242 4242 4242	123	0 - Success ( type : Visa )
