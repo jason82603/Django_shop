@@ -1,5 +1,5 @@
 到sql新增 django_shop 資料庫
-pip install requirements.txt
+pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 到sql "商品資料庫新增"
