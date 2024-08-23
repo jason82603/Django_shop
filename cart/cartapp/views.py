@@ -251,10 +251,22 @@ def cartordercheck(request):  #查詢訂單
                 data_list.append(data_dic)  # 将每个订单的详情添加到列表中
             # print(data_list)
             # print(f'data_list長度:{len(data_list)}')
-        else:
-            logout(request)
+        else: # 如果用户沒有訂單
+            orderid = request.GET.get('orderid', '')  # 取得輸入id
+            customemail = request.GET.get('customemail', '')  # 取得輸email
+            if orderid == '' and customemail == '':  # 按查詢訂單鈕
+                firstsearch = 1
+            else:
+                no_order = 1
+                order = models.OrdersModel.objects.filter(id=orderid).first()
+                print(order)
+                if order is None or order.customemail != customemail:  # 查不到資料
+                    notfound = 1
+                else:  # 找到符合的資料
+                    details = models.DetailModel.objects.filter(dorder=order)
+            # logout(request)
             # return HttpResponse('Logout Successful')
-            return redirect('cartordercheck')
+            # return redirect('cartordercheck')
     return render(request, "cartordercheck.html", locals())
 
 def send_simple_message(mailfrom, mailpw, mailto, mailsubject, mailcontent): #寄信
